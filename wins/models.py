@@ -29,7 +29,7 @@ class Profile(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     pic = ImageField(blank=True, manual_crop="")
-    bio = models.CharField(default="Hi!", max_length = 25)
+    bio = models.CharField(default="Hi!", max_length = 30)
     
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
@@ -63,9 +63,4 @@ class Image(models.Model):
 
     def update_posted_by(self,new_posted_by):
         self.posted_by = new_caption
-        self.save()# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
-from django.db import models
-
-# Create your models here.
+        self.save()

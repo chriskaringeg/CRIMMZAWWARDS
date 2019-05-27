@@ -82,9 +82,4 @@ def update_profile(request):
             return redirect(final_url)
     else:
         form = ProfileForm()
-    return render(request, "update_profile.html", {"form":form}) # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
-from django.shortcuts import render
-
-# Create your views here.
+    return render(request, "update_profile.html", {"form":form}) 
