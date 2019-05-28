@@ -1,6 +1,6 @@
 from django import forms
 from .models import Image , Profile , User
-from pyuploadcare.dj.forms import ImageField
+
 
 class ImageForm(forms.ModelForm):  
     class Meta:
