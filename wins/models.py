@@ -7,17 +7,18 @@ from pyuploadcare.dj.models import ImageField
 from django import forms
 
 
-# Create your models here.
-
 class Profile(models.Model):
     '''
     Method to create profile table
     '''
-
+    name = models.CharField(max_length=30)
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     pic = ImageField(blank=True, manual_crop="")
     bio = models.CharField(default="Hi!", max_length = 30)
     
+    def save_profile(self):
+        self.save()
+
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
         if created:
