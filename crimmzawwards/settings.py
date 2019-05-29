@@ -48,6 +48,14 @@ else:
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = '9w&@!155bh9la&9ebxko8w&fv)$5sl&z875li!t&76g%3tw9!b'
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS')
 

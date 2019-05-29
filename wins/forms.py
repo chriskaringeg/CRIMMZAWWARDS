@@ -1,5 +1,7 @@
 from django import forms
-from .models import Image , Profile , User
+from .models import Image , Profile 
+from django.contrib.auth.models import User
+from pyuploadcare.dj.forms import ImageField
 
 
 class ImageForm(forms.ModelForm):  
