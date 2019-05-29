@@ -30,7 +30,7 @@ def welcome(request):
         images = Image.objects.all()
     except Image.DoesNotExist:
         images = None
-    return render(request ,'index.html' , { 'images': images , 'form': form})
+    return render(request ,'index.html' , {  'form': form})
 
 def signup(request):
     '''
