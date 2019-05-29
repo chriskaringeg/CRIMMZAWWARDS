@@ -3,7 +3,6 @@ from .models import Image , Profile
 from django.contrib.auth.models import User
 from pyuploadcare.dj.forms import ImageField
 
-
 class ImageForm(forms.ModelForm):  
     class Meta:
         model = Image
